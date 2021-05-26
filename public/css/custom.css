@@ -1,0 +1,18 @@
+.table-dark .table-hover tbody tr:hover td {
+    background-color: #e51b48;
+    color: #afafaf;
+}
+.text-color{
+    color: #afafaf;
+}
+
+tr {
+    line-height: 18px;
+    min-height: 18px;
+    height: 18px;
+ }
+
+.btn-color{
+    background-color: #e51b48;
+    color: #fff;
+}
