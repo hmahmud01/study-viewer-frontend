@@ -3,7 +3,6 @@ import React from 'react';
 const Edit = (props) => {
     
     const study = props.data.data;
-    const patient = study.patient;
 
     const editHandler = () => {
         // constructing url with parameters 
@@ -14,10 +13,10 @@ const Edit = (props) => {
         }
         var query = new URLSearchParams(params).toString();
         url = url + "?" + query;
-
         
         // Api request to update the study
-        fetch(url, {
+        fetch(url, 
+            {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,7 +26,8 @@ const Edit = (props) => {
                 if(response.status == 200) {
                     window.location.reload();
                 }
-            });
+            }
+        );
     }
 
     return(

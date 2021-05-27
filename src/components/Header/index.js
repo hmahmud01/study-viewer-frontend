@@ -25,33 +25,30 @@ const Header = (props) => {
             headers: {"Content-type": "application/json; charset=UTF-8"},
             body: JSON.stringify(study)
         })
-        .then(response => {
+        .then(response => {            
             if(response.status == 200) {
                 window.location.reload();
             }
         });
-        
-
-        // window.location.reload(); 
     }
 
     // personCode Checking if exists
     const personCodeChecker = (event) => {
-        console.log(event.target.value);
-        var persoCode = event.target.value;
+        var personCode = event.target.value;
         const list = props.list;
-
         for (var index = 0; index <list.length; ++index) {
-            var val =  list[index];              
-            if(persoCode == val.personCode){
-                console.log("personcode exists");
-                var element = document.getElementById("personCode");
+            var val =  list[index];    
+            var element = document.getElementById("personCode");          
+            if(personCode == val.personCode){
                 element.classList.add("is-invalid");
+                break;
+            }else{
+                if(element.classList.contains("is-invalid")){
+                    element.classList.remove("is-invalid");
+                }                
             }
         }
     }
-
-
 
     return(
         <div className="row">
